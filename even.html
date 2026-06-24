@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Marks Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Average Marks Calculator</h2>
+
+        <input type="number" id="sub1" placeholder="Subject 1 Marks" min="0" max="100">
+        <input type="number" id="sub2" placeholder="Subject 2 Marks" min="0" max="100">
+        <input type="number" id="sub3" placeholder="Subject 3 Marks" min="0" max="100">
+        <input type="number" id="sub4" placeholder="Subject 4 Marks" min="0" max="100">
+
+        <button onclick="calculateAverage()">Calculate Average</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            let s1 = Number(document.getElementById("sub1").value);
+            let s2 = Number(document.getElementById("sub2").value);
+            let s3 = Number(document.getElementById("sub3").value);
+            let s4 = Number(document.getElementById("sub4").value);
+
+            let average = (s1 + s2 + s3 + s4) / 4;
+
+            document.getElementById("result").innerHTML =
+                "Average Marks = " + average.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
